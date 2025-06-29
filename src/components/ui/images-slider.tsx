@@ -2,6 +2,7 @@
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "motion/react";
 import React, { useEffect, useState } from "react";
+import { cubicBezier } from "framer-motion"
 
 export const ImagesSlider = ({
     images,
@@ -21,6 +22,7 @@ export const ImagesSlider = ({
     direction?: "up" | "down";
 }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [loading, setLoading] = useState(false);
     const [loadedImages, setLoadedImages] = useState<string[]>([]);
 
@@ -95,7 +97,7 @@ export const ImagesSlider = ({
             opacity: 1,
             transition: {
                 duration: 0.5,
-                ease: [0.645, 0.045, 0.355, 1.0],
+                ease: cubicBezier(0.645, 0.045, 0.355, 1.0),
             },
         },
         upExit: {
