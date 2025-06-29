@@ -140,12 +140,14 @@ export const ImagesSlider = ({
                     <motion.img
                         key={currentIndex}
                         src={loadedImages[currentIndex]}
+                        alt={`Slide ${currentIndex + 1}`}
                         initial="initial"
                         animate="visible"
                         exit={direction === "up" ? "upExit" : "downExit"}
                         variants={slideVariants}
-                        className="image h-full w-full absolute inset-0 object-cover object-center"
+                        className="image absolute inset-0 w-full h-full object-cover object-center sm:object-contain"
                     />
+
                 </AnimatePresence>
             )}
         </div>

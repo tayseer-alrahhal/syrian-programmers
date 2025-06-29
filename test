@@ -1,0 +1,134 @@
+
+
+
+
+"use client";
+import Image from 'next/image';
+import React, { useState, useEffect } from 'react';
+
+const Hero = () => {
+    const images = [
+        {
+            url: '/basel/b1.jpg',
+            title: '1'
+        },
+        {
+            url: '/basel/b2.png',
+            title: '12'
+        },
+        {
+            url: '/basel/b3.jpg',
+            title: '12'
+        },
+        {
+            url: '/basel/b4.jpg',
+            title: '12'
+        },
+        {
+            url: '/basel/b5.jpg',
+            title: '14'
+        },
+        {
+            url: '/basel/b6.jpg',
+            title: '1'
+        }
+    ];
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) =>
+                prevIndex === images.length - 1 ? 0 : prevIndex + 1
+            );
+        }, 4000);
+
+        return () => clearInterval(interval);
+    }, [images.length]);
+
+
+
+    return (
+        <div className="relative w-full h-screen overflow-hidden mt-[100px]">
+            <div className="absolute inset-0">
+                {images.map((image, index) => (
+                    <div
+                        key={index}
+                        className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentIndex ? 'opacity-100' : 'opacity-0'
+                            }`}
+                    >
+                        <Image
+                            width={100}
+                            height={100}
+                            src={image.url}
+                            alt={image.title}
+                            className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0"></div>
+                    </div>
+                ))}
+            </div>
+
+            <div className="absolute inset-0 flex items-center justify-center">
+                <div className="z-50 flex flex-col justify-center items-center animate-fade-in">
+                    <p className="font-bold text-xl leading-[80px] md:text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4 animate-slide-up">
+                        نبني مستقبلاً رقمياً بأيدي سورية <br />
+                        معًا نرتقي بمجتمع البرمجة نحو الإبداع والتطور.
+                    </p>
+
+                    <div className="flex items-center gap-4 animate-slide-up-delay">
+                        <a href="#" className="cursor-pointer px-4 py-2 backdrop-blur-sm border bg-emerald-300/10 border-emerald-500/20 text-white mx-auto text-center rounded-full relative mt-4 hover:bg-emerald-300/20 transition-all duration-300">
+                            <span>عن المبادرة</span>
+                            <div className="absolute inset-x-0 h-px -bottom-px bg-gradient-to-r w-3/4 mx-auto from-transparent via-emerald-500 to-transparent" />
+                        </a>
+
+                        <a href="#" className="md:hidden cursor-pointer px-4 py-2 backdrop-blur-sm border bg-emerald-300/10 border-emerald-500/20 text-white mx-auto text-center rounded-full relative mt-4 hover:bg-emerald-300/20 transition-all duration-300">
+                            <span>انضم الان</span>
+                            <div className="absolute inset-x-0 h-px -bottom-px bg-gradient-to-r w-3/4 mx-auto from-transparent via-emerald-500 to-transparent" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <style jsx>{`
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+            transform: translateY(-80px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        @keyframes slide-up {
+          from {
+            opacity: 0;
+            transform: translateY(80px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        .animate-fade-in {
+          animation: fade-in 0.6s ease-out;
+        }
+        
+        .animate-slide-up {
+          animation: slide-up 0.8s ease-out;
+        }
+        
+        .animate-slide-up-delay {
+          animation: slide-up 1s ease-out 0.2s both;
+        }
+      `}</style>
+        </div>
+    );
+};
+
+export default Hero;

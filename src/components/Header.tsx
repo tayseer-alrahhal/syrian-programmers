@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
+import { MenuIcon, X } from 'lucide-react'
 
 export default function Header() {
     const [isScrolled, setIsScrolled] = useState(false)
@@ -73,13 +74,16 @@ export default function Header() {
                 {/* Mobile Toggle */}
                 <button
                     onClick={toggleMenu}
-                    className="lg:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1"
+                    className="lg:hidden cursor-pointer flex flex-col justify-center items-center w-8 h-8 space-y-1"
                     aria-label="Toggle menu"
                 >
-                    <span className={`block w-6 h-0.5 bg-black transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
-                    <span className={`block w-6 h-0.5 bg-black transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`} />
-                    <span className={`block w-6 h-0.5 bg-black transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
+                    {isMenuOpen === false ? (
+                        <MenuIcon className="w-10 h-10 text-black" />
+                    ) : (
+                        <X className="w-10 h-10 text-black transform rotate-90" />
+                    )}
                 </button>
+
             </div>
 
             {/* Mobile Menu */}
