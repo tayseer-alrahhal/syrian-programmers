@@ -104,14 +104,14 @@ export const ImagesSlider = ({
             opacity: 1,
             y: "-150%",
             transition: {
-                duration: 1,
+                duration: 2,
             },
         },
         downExit: {
             opacity: 1,
             y: "150%",
             transition: {
-                duration: 1,
+                duration: 2,
             },
         },
     };
@@ -145,9 +145,8 @@ export const ImagesSlider = ({
                         animate="visible"
                         exit={direction === "up" ? "upExit" : "downExit"}
                         variants={slideVariants}
-                        className="image absolute inset-0 w-full h-full object-cover object-center sm:object-contain"
+                        className="image h-full w-full absolute inset-0 object-cover object-center"
                     />
-
                 </AnimatePresence>
             )}
         </div>

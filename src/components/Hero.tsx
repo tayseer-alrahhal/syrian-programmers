@@ -10,13 +10,13 @@ export default function Hero() {
     const images = [
         "/basel/b1.jpg",
         "/basel/b2.png",
-        "/basel/b3.jpg",
-        "/basel/b4.jpg",
+        // "/basel/b3.jpg",
+        // "/basel/b4.jpg",
         "/basel/b5.jpg",
         "/basel/b6.jpg",
     ];
     return (
-        <section className="mt-[100px]">
+        <section className="mt-[100px] max-md:h-[40%]">
             <ImagesSlider className="h-[40rem]" images={images}>
                 <motion.div
                     initial={{
@@ -32,7 +32,7 @@ export default function Hero() {
                     }}
                     className="z-50 flex flex-col justify-center items-center"
                 >
-                    <motion.p className="font-bold text-xl leading-[80px] md:text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4">
+                    <motion.p className="font-bold text-xl leading-[80px] max-md:leading-[40px] md:text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4">
                         نبني مستقبلاً رقمياً بأيدي سورية <br />
                         معًا نرتقي بمجتمع البرمجة نحو الإبداع والتطور.
                     </motion.p>
