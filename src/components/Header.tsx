@@ -20,7 +20,7 @@ export default function Header() {
         setIsScrolled(latest > 10)
     })
 
-    const baseClass = "fixed top-3 left-1/2 transform -translate-x-1/2 w-[98.5%] px-4 sm:px-6 lg:px-20 py-3 rounded-md z-50 transition-all duration-300 "
+    const baseClass = "fixed top-3 left-1/2 transform -translate-x-1/2 w-[97%] px-4 sm:px-6 lg:px-[55px] py-3 rounded-md z-50 transition-all duration-300 "
     const scrolledClass = "bg-white border shadow-md"
 
     return (

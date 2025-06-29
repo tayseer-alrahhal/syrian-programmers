@@ -7,7 +7,7 @@ export default function Hero() {
 
     return (
         <section className="mt-[100px] max-md:h-[40%]">
-            <div className="h-[40rem] bg-[url('/basel.jpg')] bg-cover bg-center bg-no-repeat relative flex justify-center items-center">
+            <div className="h-[40rem] bg-[url('/code.png')] bg-cover bg-center bg-no-repeat relative flex justify-center items-center">
 
                 <div className="absolute inset-0 bg-black/60 z-0" />
 
