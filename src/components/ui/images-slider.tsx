@@ -1,8 +1,8 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { motion, AnimatePresence } from "motion/react";
-import React, { useEffect, useState } from "react";
-import { cubicBezier } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion";
+import React, { useCallback, useEffect, useState } from "react";
+import { cubicBezier } from "framer-motion";
 
 export const ImagesSlider = ({
     images,
@@ -26,26 +26,22 @@ export const ImagesSlider = ({
     const [loading, setLoading] = useState(false);
     const [loadedImages, setLoadedImages] = useState<string[]>([]);
 
-    const handleNext = () => {
+    const handleNext = useCallback(() => {
         setCurrentIndex((prevIndex) =>
             prevIndex + 1 === images.length ? 0 : prevIndex + 1
         );
-    };
+    }, [images.length]);
 
-    const handlePrevious = () => {
+    const handlePrevious = useCallback(() => {
         setCurrentIndex((prevIndex) =>
             prevIndex - 1 < 0 ? images.length - 1 : prevIndex - 1
         );
-    };
+    }, [images.length]);
 
-    useEffect(() => {
-        loadImages();
-    }, []);
-
-    const loadImages = () => {
+    const loadImages = useCallback(() => {
         setLoading(true);
         const loadPromises = images.map((image) => {
-            return new Promise((resolve, reject) => {
+            return new Promise<string>((resolve, reject) => {
                 const img = new Image();
                 img.src = image;
                 img.onload = () => resolve(image);
@@ -55,11 +51,16 @@ export const ImagesSlider = ({
 
         Promise.all(loadPromises)
             .then((loadedImages) => {
-                setLoadedImages(loadedImages as string[]);
+                setLoadedImages(loadedImages);
                 setLoading(false);
             })
             .catch((error) => console.error("Failed to load images", error));
-    };
+    }, [images]);
+
+    useEffect(() => {
+        loadImages();
+    }, [loadImages]);
+
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
             if (event.key === "ArrowRight") {
@@ -71,8 +72,7 @@ export const ImagesSlider = ({
 
         window.addEventListener("keydown", handleKeyDown);
 
-        // autoplay
-        let interval: any;
+        let interval: ReturnType<typeof setInterval> | undefined;
         if (autoplay) {
             interval = setInterval(() => {
                 handleNext();
@@ -81,9 +81,9 @@ export const ImagesSlider = ({
 
         return () => {
             window.removeEventListener("keydown", handleKeyDown);
-            clearInterval(interval);
+            if (interval) clearInterval(interval);
         };
-    }, []);
+    }, [autoplay, handleNext, handlePrevious]);
 
     const slideVariants = {
         initial: {
