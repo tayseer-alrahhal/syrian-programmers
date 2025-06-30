@@ -20,7 +20,7 @@ export default function Header() {
         setIsScrolled(latest > 10)
     })
 
-    const baseClass = "fixed top-3 left-1/2 transform -translate-x-1/2 w-[97%] px-4 sm:px-6 lg:px-[55px] py-3 rounded-md z-50 transition-all duration-300 "
+    const baseClass = "fixed top-3 left-1/2 transform -translate-x-1/2 w-[97%] px-4 sm:px-6 lg:px-[50px] py-3 rounded-md z-50 transition-all duration-300 max-md:bg-white max-md:border max-md:shadow-md"
     const scrolledClass = "bg-white border shadow-md"
 
     return (
@@ -68,7 +68,7 @@ export default function Header() {
 
                 {/* CTA Button */}
                 <div className="hidden lg:block">
-                    <a href="#" className="bg-green-900 text-white px-4 py-2 rounded hover:bg-[#BB2D34] transition duration-300 text-sm xl:text-base">انضم إلينا</a>
+                    <a href="#" className="bg-green-900  text-white px-4 py-2 rounded hover:bg-[#BB2D34] transition duration-300 text-sm xl:text-base">انضم إلينا</a>
                 </div>
 
                 {/* Mobile Toggle */}

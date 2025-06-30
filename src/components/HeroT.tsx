@@ -10,16 +10,28 @@ export default function HeroT() {
         <section className="mt-[100px] mx-[50px]">
             <div className=" relative flex max-md:flex-col justify-center items-center gap-10">
 
-                <div>
+                <motion.div
+                    initial={{
+                        opacity: 0,
+                        y: -80,
+                    }}
+                    animate={{
+                        opacity: 1,
+                        y: 0,
+                    }}
+                    transition={{
+                        duration: 0.8,
+                    }}
+                >
                     <Image
-                        src="/code.png"
+                        src="/code.svg"
                         alt="مبادرة باسل الصفدي"
-                        width={1920}
-                        height={1080}
+                        width={100}
+                        height={100}
                         className="h-full w-full object-cover object-center"
                         priority
                     />
-                </div>
+                </motion.div>
 
 
                 <motion.div
@@ -32,12 +44,12 @@ export default function HeroT() {
                         y: 0,
                     }}
                     transition={{
-                        duration: 0.6,
+                        duration: 0.8,
                     }}
                     className="z-10 text-center px-4"
                 >
                     <motion.p className="font-bold text-2xl leading-[65px] max-md:leading-[40px] md:text-left md:text-4xl bg-clip-text text-transparent bg-gradient-to-b from-green-500 to-green-800 py-4">
-                        نبني مستقبلاً رقمياً بأيدي سورية <br />
+                        نبني مستقبلاً رقمياً بأيدي سورية
                         معًا نرتقي بمجتمع البرمجة نحو الإبداع والتطور.
                     </motion.p>
 

@@ -6,10 +6,11 @@
 
 body {
   font-family: 'IBM Plex Sans Arabic', sans-serif;
+  background-color: #F6F9FB;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  height: 10000vh;
+  height: 1000vh;
 }
 
 
