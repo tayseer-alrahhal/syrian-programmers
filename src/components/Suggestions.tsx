@@ -48,6 +48,13 @@ export default function Suggestions() {
         } else {
             toast.error('فشل الإرسال، حاول مرة أخرى.');
         }
+
+        setFullName("")
+        setEmail("")
+        setSpecialization("")
+        setIdeaTitle("")
+        setSubject("")
+        setLoading(false)
     }
 
     return (
@@ -61,7 +68,7 @@ export default function Suggestions() {
 
                 <form
                     onSubmit={handleSubmit}
-                    className="w-full max-w-2xl mt-8 space-y-6 bg-white p-8 rounded-lg shadow-lg border border-gray-200"
+                    className="w-full max-w-2xl max-md:w-[115%] mt-8 space-y-6 bg-white p-8 rounded-lg shadow-lg border border-gray-200"
                     dir="rtl"
                 >
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
