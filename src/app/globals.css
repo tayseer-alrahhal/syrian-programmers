@@ -13,6 +13,10 @@ body {
   height: 1000vh;
 }
 
+.Toastify__toast {
+  font-family: 'IBM Plex Sans Arabic', sans-serif !important;
+}
+
 
 @layer utilities {
   .hover-effect::after {
@@ -30,7 +34,6 @@ body {
     width: 100%;
   }
 }
-
 
 @custom-variant dark (&:is(.dark *));
 
