@@ -8,6 +8,9 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { FormValidation } from "@/lib/validation"
 import { Bounce, toast, ToastContainer } from "react-toastify"
+import { motion } from 'framer-motion';
+
+
 
 export default function Suggestions() {
     const [fullName, setFullName] = useState("")
@@ -60,13 +63,30 @@ export default function Suggestions() {
     return (
         <section className="mt-[100px] mx-[50px]">
             <div className="flex flex-col items-center justify-center gap-2">
-                <h2 className="text-[40px] text-[#003812] font-bold mb-6">صندوق الاقتراحات</h2>
-                <p className="text-[18px] text-gray-700 max-w-2xl text-center">
+                <motion.h2
+                    initial={{ opacity: 0, y: -30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, delay: 0.1 }}
+                    className="text-[40px] text-[#003812] font-bold mb-6">صندوق الاقتراحات</motion.h2>
+                <motion.p
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, delay: 0.2 }}
+                    className="text-[18px] text-gray-700 max-w-2xl text-center">
                     مساحتك المخصصة لطرح الأفكار التي تساعدنا في تحسين وتطوير المبادرة بشكل مستمر. نقدر مساهمتك ونؤمن أن كل فكرة
                     تساهم في بناء مستقبل أفضل للجميع.
-                </p>
+                </motion.p>
 
-                <form
+                <motion.form
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{
+                        duration: 0.8,
+                        delay: 0.5,
+                        ease: [0, 0.71, 0.2, 1.01],
+                    }}
                     onSubmit={handleSubmit}
                     className="w-full max-w-2xl max-md:w-[115%] mt-8 space-y-6 bg-white p-8 rounded-lg shadow-lg border border-gray-200"
                     dir="rtl"
@@ -190,7 +210,7 @@ export default function Suggestions() {
                         </Button>
 
                     </div>
-                </form>
+                </motion.form>
             </div>
 
             <ToastContainer
