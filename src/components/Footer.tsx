@@ -11,15 +11,15 @@ export default function Footer() {
     return (
         <footer
             className='mt-[100px] m-2 w-[98%] mx-auto rounded-lg bg-gradient-to-b from-[#0f1018] via-[#171927] to-[#222430] py-8'>
-            <div className='mx-[50px] flex flex-col items-center justify-center text-center text-white gap-20'>
-                <div className='flex max-md:flex-col items-center justify-center gap-10'>
+            <div className=' flex flex-col items-center justify-center text-center text-white'>
+                <div className='flex max-md:flex-col items-center justify-center gap-10 mt-10 mb-14'>
                     <h2>باب الانضمام إلى المبادرة مفتوح الآن — شاركنا رحلتنا نحو التميّز.</h2>
                     <div>
                         <a href="#" className="bg-green-900  text-white px-4 py-2 rounded hover:bg-[#BB2D34] transition duration-300 text-sm xl:text-base">انضم إلينا</a>
                     </div>
                 </div>
 
-                <div className='flex flex-col lg:flex-row items-center justify-around w-full gap-10'>
+                <div className='flex flex-col lg:flex-row items-center justify-around w-full gap-10 border-t border-b border-gray-700 pt-8 pb-4'>
                     <div>
                         <h3 className="text-white text-lg font-semibold mb-5">سياساتنا الرسمية</h3>
                         <ul className="space-y-3">
@@ -54,7 +54,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div>
+                <div className=''>
                     <p className="text-sm mt-10">
                         حقوق النشر محفوظة
                         <a
