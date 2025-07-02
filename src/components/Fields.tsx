@@ -1,5 +1,8 @@
+"use client";
 import Image from 'next/image';
 import React from 'react'
+import { motion } from 'framer-motion';
+
 
 
 
@@ -21,17 +24,31 @@ export default function Fields() {
     return (
         <section className='bg-white pt-1 pb-12'>
             <div className='mt-[100px] mx-[50px] flex flex-col items-center justify-center'>
-                <h2 className='text-[40px] text-[#003812] font-bold mb-6'>مجالاتنا</h2>
-                <p className='text-[18px] text-gray-700 max-w-2xl text-center mb-8'>
+                <motion.h2
+                    initial={{ opacity: 0, y: -30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, delay: 0.1 }}
+                    className='text-[40px] text-[#003812] font-bold mb-6'>مجالاتنا
+                </motion.h2>
+                <motion.p
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, delay: 0.2 }}
+                    className='text-[18px] text-gray-700 max-w-2xl text-center mb-8'>
                     نعمل في مجالات متعددة لتلبية احتياجات مجتمع المبرمجين والمبدعين السوريين.
-                </p>
+                </motion.p>
 
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-[160px] gap-y-4 justify-center mt-8'>
-
                     {fields.map(({ title, image, id }) => (
-                        <div
+                        <motion.div
                             key={id}
-                            className="group relative flex flex-col items-center justify-between gap-5 p-6 bg-gradient-to-br from-white via-gray-50 to-gray-100  rounded-xl shadow-md hover:shadow-2xl hover:scale-[1.02] transition-all duration-500 ease-out max-w-[280px] min-h-[320px] cursor-pointer overflow-hidden "
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.7, delay: 0.2 }}
+                            className="group relative flex flex-col items-center justify-between gap-5 p-6 bg-gradient-to-br from-white via-gray-50 to-gray-100  rounded-xl shadow-md hover:shadow-2xl hover:scale-[1.02] transition-all duration-500 ease-out max-w-[280px] min-h-[320px] cursor-pointer overflow-hidden"
                         >
                             <div className="absolute inset-0 bg-gradient-to-r from-blue-50/30 to-green-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
@@ -50,7 +67,6 @@ export default function Fields() {
                                 <h3 className="text-xl font-bold text-[#003812] group-hover:text-[#004d18] transition-colors duration-300 leading-tight px-2">
                                     {title}
                                 </h3>
-
                                 <div className="w-12 h-0.5 bg-gradient-to-r from-[#003812] to-green-400 rounded-full group-hover:w-16 transition-all duration-300"></div>
                             </div>
 
@@ -59,11 +75,10 @@ export default function Fields() {
                             </div>
 
                             <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-400/20 via-green-400/20 to-blue-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-sm"></div>
-                        </div>
-
+                        </motion.div>
                     ))}
-
                 </div>
+
 
             </div>
         </section>

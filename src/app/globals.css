@@ -10,7 +10,6 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  height: 1000vh;
 }
 
 .Toastify__toast {
