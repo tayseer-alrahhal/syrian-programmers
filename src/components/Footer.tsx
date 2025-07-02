@@ -14,7 +14,7 @@ export default function Footer() {
             <div className='mx-[50px] flex flex-col items-center justify-center text-center text-white gap-20'>
                 <div className='flex max-md:flex-col items-center justify-center gap-10'>
                     <h2>باب الانضمام إلى المبادرة مفتوح الآن — شاركنا رحلتنا نحو التميّز.</h2>
-                    <div className="hidden lg:block">
+                    <div>
                         <a href="#" className="bg-green-900  text-white px-4 py-2 rounded hover:bg-[#BB2D34] transition duration-300 text-sm xl:text-base">انضم إلينا</a>
                     </div>
                 </div>
@@ -81,6 +81,6 @@ export default function Footer() {
 
                 </div>
             </div>
-        </footer>
+        </footer >
     )
 }
