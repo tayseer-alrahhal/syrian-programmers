@@ -10,7 +10,7 @@ export default function Footer() {
 
     return (
         <footer
-            className='mt-[100px] m-2 w-[98%] mx-auto rounded-lg bg-gradient-to-b from-[#0f1018] via-[#171927] to-[#222430] py-8'>
+            className='mt-[100px] m-2 w-[98%] max-md:w-[97%] mx-auto rounded-lg bg-gradient-to-b from-[#0f1018] via-[#171927] to-[#222430] py-8'>
             <div className=' flex flex-col items-center justify-center text-center text-white'>
                 <div className='max-md:mx-[50px] flex max-md:flex-col items-center justify-center gap-10 mt-10 mb-14'>
                     <h2>باب الانضمام إلى المبادرة مفتوح الآن — شاركنا رحلتنا نحو التميّز.</h2>
