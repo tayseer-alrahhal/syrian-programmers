@@ -177,7 +177,7 @@ export default function Fields() {
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="bg-white text-[#003812] px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg"
+                            className="bg-white text-[#003812] px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg cursor-pointer"
                         >
                             ابدأ الآن
                         </motion.button>
