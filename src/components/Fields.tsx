@@ -84,7 +84,6 @@ export default function Fields() {
                         className="text-4xl md:text-5xl font-bold text-[#003812] mb-6"
                     >
                         مجالاتنا
-                        <span className="block w-24 h-1 bg-gradient-to-r from-[#003812] to-green-500 mx-auto mt-4 rounded-full"></span>
                     </motion.h2>
 
                     <motion.p
